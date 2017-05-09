@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35AE083E1EC1BDBF0033B8AF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 35AE083D1EC1BDBF0033B8AF /* .swiftlint.yml */; };
 		35DE14FB1EC0B08B006B76AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE14FA1EC0B08B006B76AF /* AppDelegate.swift */; };
 		35DE14FD1EC0B08B006B76AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE14FC1EC0B08B006B76AF /* ViewController.swift */; };
 		35DE15001EC0B08B006B76AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DE14FE1EC0B08B006B76AF /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35AE083D1EC1BDBF0033B8AF /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		35DE14F71EC0B08B006B76AF /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DE14FA1EC0B08B006B76AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35DE14FC1EC0B08B006B76AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35AE08391EC1B9BA0033B8AF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				35DE14FC1EC0B08B006B76AF /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		35AE083A1EC1B9E40033B8AF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				35DE14FE1EC0B08B006B76AF /* Main.storyboard */,
+				35DE15031EC0B08B006B76AF /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		35AE083C1EC1BD930033B8AF /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				35AE083D1EC1BDBF0033B8AF /* .swiftlint.yml */,
+			);
+			name = SupportFiles;
+			sourceTree = "<group>";
+		};
 		35DE14EE1EC0B08B006B76AF = {
 			isa = PBXGroup;
 			children = (
@@ -55,10 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				35DE14FA1EC0B08B006B76AF /* AppDelegate.swift */,
-				35DE14FC1EC0B08B006B76AF /* ViewController.swift */,
-				35DE14FE1EC0B08B006B76AF /* Main.storyboard */,
+				35AE083A1EC1B9E40033B8AF /* Storyboards */,
+				35AE08391EC1B9BA0033B8AF /* ViewControllers */,
+				35AE083C1EC1BD930033B8AF /* SupportFiles */,
 				35DE15011EC0B08B006B76AF /* Assets.xcassets */,
-				35DE15031EC0B08B006B76AF /* LaunchScreen.storyboard */,
 				35DE15061EC0B08B006B76AF /* Info.plist */,
 			);
 			path = ToDoList;
@@ -74,6 +101,7 @@
 				35DE14F31EC0B08B006B76AF /* Sources */,
 				35DE14F41EC0B08B006B76AF /* Frameworks */,
 				35DE14F51EC0B08B006B76AF /* Resources */,
+				35AE083B1EC1BA500033B8AF /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -124,6 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35AE083E1EC1BDBF0033B8AF /* .swiftlint.yml in Resources */,
 				35DE15051EC0B08B006B76AF /* LaunchScreen.storyboard in Resources */,
 				35DE15021EC0B08B006B76AF /* Assets.xcassets in Resources */,
 				35DE15001EC0B08B006B76AF /* Main.storyboard in Resources */,
@@ -131,6 +160,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35AE083B1EC1BA500033B8AF /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		35DE14F31EC0B08B006B76AF /* Sources */ = {
@@ -302,6 +348,7 @@
 				35DE150B1EC0B08B006B76AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
