@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		35B94C561EC1E33F00394049 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 35B94C551EC1E33F00394049 /* .swiftlint.yml */; };
 		35B94C581EC1E39600394049 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 35B94C571EC1E39600394049 /* Podfile */; };
+		35B94C5C1EC1F30500394049 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B94C5B1EC1F30500394049 /* Storyboards.swift */; };
 		35DE14FB1EC0B08B006B76AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE14FA1EC0B08B006B76AF /* AppDelegate.swift */; };
 		35DE14FD1EC0B08B006B76AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE14FC1EC0B08B006B76AF /* ViewController.swift */; };
 		35DE15001EC0B08B006B76AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DE14FE1EC0B08B006B76AF /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		35B94C551EC1E33F00394049 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		35B94C571EC1E39600394049 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		35B94C5B1EC1F30500394049 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		35DE14F71EC0B08B006B76AF /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DE14FA1EC0B08B006B76AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35DE14FC1EC0B08B006B76AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 			name = SupportFiles;
 			sourceTree = "<group>";
 		};
+		35B94C5A1EC1ED9500394049 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				35B94C5B1EC1F30500394049 /* Storyboards.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		35DE14EE1EC0B08B006B76AF = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				35DE14FA1EC0B08B006B76AF /* AppDelegate.swift */,
+				35B94C5A1EC1ED9500394049 /* Constants */,
 				35AE083A1EC1B9E40033B8AF /* Storyboards */,
 				35AE08391EC1B9BA0033B8AF /* ViewControllers */,
 				35AE083C1EC1BD930033B8AF /* SupportFiles */,
@@ -132,6 +143,7 @@
 				35AE083B1EC1BA500033B8AF /* Swiftlint */,
 				075094F4A31099D0F4EF8564 /* [CP] Embed Pods Frameworks */,
 				2BE30C112665A6D03EDC7380 /* [CP] Copy Pods Resources */,
+				35B94C591EC1ED2600394049 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -237,6 +249,20 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		35B94C591EC1ED2600394049 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/SwiftGen/bin/swiftgen\" storyboards \"$PROJECT_DIR/ToDoList\" --templatePath \"$PROJECT_DIR/ToDoList/Storyboards.template\" --output \"$PROJECT_DIR/ToDoList/Storyboards.swift\" -t swift3";
+		};
 		716E04FF29129841B759C633 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35B94C5C1EC1F30500394049 /* Storyboards.swift in Sources */,
 				35DE14FD1EC0B08B006B76AF /* ViewController.swift in Sources */,
 				35DE14FB1EC0B08B006B76AF /* AppDelegate.swift in Sources */,
 			);
