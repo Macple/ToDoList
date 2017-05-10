@@ -45,12 +45,21 @@ struct StoryboardScene {
   enum LaunchScreen: StoryboardSceneType {
     static let storyboardName = "LaunchScreen"
   }
-  enum Main: StoryboardSceneType {
+  enum Main: String, StoryboardSceneType {
     static let storyboardName = "Main"
 
-    static func initialViewController() -> ViewController {
-      guard let vc = storyboard().instantiateInitialViewController() as? ViewController else {
+    static func initialViewController() -> UINavigationController {
+      guard let vc = storyboard().instantiateInitialViewController() as? UINavigationController else {
         fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
+      }
+      return vc
+    }
+
+    case mainViewControllerScene = "MainViewController"
+    static func instantiateMainViewController() -> ToDoList.MainViewController {
+      guard let vc = StoryboardScene.Main.mainViewControllerScene.viewController() as? ToDoList.MainViewController
+      else {
+        fatalError("ViewController 'MainViewController' is not of the expected class ToDoList.MainViewController.")
       }
       return vc
     }
