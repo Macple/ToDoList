@@ -20,6 +20,19 @@ class MainCoordinator: Coordinator {
 
     func start() {
         let mainVC = StoryboardScene.Main.instantiateMainViewController()
+        mainVC.dataSource = self
+
         sourceNavigationController.setViewControllers([mainVC], animated: true)
+    }
+}
+
+extension MainCoordinator: MainDataSource {
+
+    func numberOfSections() -> Int {
+        return 1
+    }
+
+    func numberOfItemsIn(_ section: Int) -> Int {
+        return 10
     }
 }
