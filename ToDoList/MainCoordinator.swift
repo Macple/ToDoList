@@ -8,13 +8,17 @@
 
 import UIKit
 
+import RealmSwift
+
 class MainCoordinator: Coordinator {
 
     var childCoordinators = [Coordinator]()
     weak var parent: Coordinator?
     fileprivate let sourceNavigationController: UINavigationController
+    var realm: Realm?
 
     init(sourceNC: UINavigationController) {
+        self.realm = try? Realm()
         self.sourceNavigationController = sourceNC
     }
 
@@ -23,6 +27,17 @@ class MainCoordinator: Coordinator {
         mainVC.dataSource = self
 
         sourceNavigationController.setViewControllers([mainVC], animated: true)
+    }
+
+    private func addTask() {
+        let task = Task()
+        task.title = "Task"
+        task.info = "Desription"
+
+        try? realm?.write {
+            realm?.add(task)
+            print("Task added")
+        }
     }
 }
 
@@ -33,6 +48,10 @@ extension MainCoordinator: MainDataSource {
     }
 
     func numberOfItemsIn(_ section: Int) -> Int {
-        return 10
+        return realm?.objects(Task.self).count ?? 0
+    }
+
+    func item(atIndex: Int) -> Task? {
+        return realm?.objects(Task.self)[atIndex]
     }
 }

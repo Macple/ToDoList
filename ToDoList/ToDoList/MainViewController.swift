@@ -11,6 +11,7 @@ import UIKit
 protocol MainDataSource: class {
     func numberOfSections() -> Int
     func numberOfItemsIn(_ section: Int) -> Int
+    func item(atIndex: Int) -> Task?
 }
 
 class MainViewController: UIViewController {
@@ -29,6 +30,7 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
 
         tableView.backgroundColor = UIColor.clear
+        tableView.register(MainTableViewCell.nib, forCellReuseIdentifier: MainTableViewCell.nibName)
     }
 }
 
@@ -50,6 +52,12 @@ extension MainViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.nibName, for: indexPath)
+
+        if let cell = cell as? MainTableViewCell, let item = dataSource?.item(atIndex: indexPath.row) {
+            cell.configureWith(MainTableViewCellModel(title: item.title, description: item.info))
+        }
+
+        return cell
     }
 }
