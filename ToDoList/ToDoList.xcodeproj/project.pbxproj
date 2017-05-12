@@ -11,7 +11,6 @@
 		35243EF41EC3038000174514 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35243EF31EC3038000174514 /* AppCoordinator.swift */; };
 		35243EFA1EC3164500174514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35243EF91EC3164500174514 /* Assets.xcassets */; };
 		35243EFC1EC31A0E00174514 /* PortaitNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35243EFB1EC31A0E00174514 /* PortaitNavigationController.swift */; };
-		35243F001EC3291400174514 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35243EFF1EC3291400174514 /* MainCoordinator.swift */; };
 		35243F021EC32DD400174514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35243F011EC32DD400174514 /* LaunchScreen.storyboard */; };
 		35243F071EC333EB00174514 /* NibNamed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35243F061EC333EB00174514 /* NibNamed.swift */; };
 		35243F091EC33A8200174514 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35243F081EC33A8200174514 /* NibLoadable.swift */; };
@@ -22,6 +21,7 @@
 		35288D601EC4A34B007FE399 /* SingleTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35288D5F1EC4A34B007FE399 /* SingleTask.storyboard */; };
 		35288D621EC4A396007FE399 /* SingleTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35288D611EC4A396007FE399 /* SingleTaskViewController.swift */; };
 		35288D641EC4A3E3007FE399 /* SingleTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35288D631EC4A3E3007FE399 /* SingleTaskCoordinator.swift */; };
+		357444951EC5F39D00D3A6AA /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357444941EC5F39D00D3A6AA /* MainCoordinator.swift */; };
 		357597F61EC5B1F700366FBC /* SubTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357597F51EC5B1F700366FBC /* SubTask.swift */; };
 		35B94C561EC1E33F00394049 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 35B94C551EC1E33F00394049 /* .swiftlint.yml */; };
 		35B94C581EC1E39600394049 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 35B94C571EC1E39600394049 /* Podfile */; };
@@ -37,7 +37,6 @@
 		35243EF31EC3038000174514 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppCoordinator.swift; path = ToDoList/AppCoordinator.swift; sourceTree = "<group>"; };
 		35243EF91EC3164500174514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35243EFB1EC31A0E00174514 /* PortaitNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PortaitNavigationController.swift; path = ../PortaitNavigationController.swift; sourceTree = "<group>"; };
-		35243EFF1EC3291400174514 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		35243F011EC32DD400174514 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35243F061EC333EB00174514 /* NibNamed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibNamed.swift; sourceTree = "<group>"; };
 		35243F081EC33A8200174514 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		35288D5F1EC4A34B007FE399 /* SingleTask.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SingleTask.storyboard; sourceTree = "<group>"; };
 		35288D611EC4A396007FE399 /* SingleTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTaskViewController.swift; sourceTree = "<group>"; };
 		35288D631EC4A3E3007FE399 /* SingleTaskCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTaskCoordinator.swift; sourceTree = "<group>"; };
+		357444941EC5F39D00D3A6AA /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCoordinator.swift; path = ToDoList/MainCoordinator.swift; sourceTree = "<group>"; };
 		357597F51EC5B1F700366FBC /* SubTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubTask.swift; sourceTree = "<group>"; };
 		35B94C551EC1E33F00394049 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		35B94C571EC1E39600394049 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -80,7 +80,7 @@
 				35288D631EC4A3E3007FE399 /* SingleTaskCoordinator.swift */,
 				35243EF31EC3038000174514 /* AppCoordinator.swift */,
 				35243EF11EC3037400174514 /* Coordinator.swift */,
-				35243EFF1EC3291400174514 /* MainCoordinator.swift */,
+				357444941EC5F39D00D3A6AA /* MainCoordinator.swift */,
 			);
 			name = Coordinators;
 			path = ..;
@@ -376,7 +376,6 @@
 				357597F61EC5B1F700366FBC /* SubTask.swift in Sources */,
 				35243EF21EC3037400174514 /* Coordinator.swift in Sources */,
 				35243F0C1EC3424E00174514 /* Task.swift in Sources */,
-				35243F001EC3291400174514 /* MainCoordinator.swift in Sources */,
 				35243F091EC33A8200174514 /* NibLoadable.swift in Sources */,
 				35288D641EC4A3E3007FE399 /* SingleTaskCoordinator.swift in Sources */,
 				35B94C5C1EC1F30500394049 /* Storyboards.swift in Sources */,
@@ -384,6 +383,7 @@
 				35DE14FD1EC0B08B006B76AF /* MainViewController.swift in Sources */,
 				35DE14FB1EC0B08B006B76AF /* AppDelegate.swift in Sources */,
 				35243EFC1EC31A0E00174514 /* PortaitNavigationController.swift in Sources */,
+				357444951EC5F39D00D3A6AA /* MainCoordinator.swift in Sources */,
 				35288D621EC4A396007FE399 /* SingleTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
