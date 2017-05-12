@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import RealmSwift
+
+//swiftlint:disable:next force_try
+let realm = try! Realm()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

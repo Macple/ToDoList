@@ -38,20 +38,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gmp-MX-mOB">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="575"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aou-aG-xJK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gmp-MX-mOB" firstAttribute="top" secondItem="aou-aG-xJK" secondAttribute="bottom" id="6qx-8g-J9q"/>
                             <constraint firstItem="UDM-Xj-t23" firstAttribute="top" secondItem="gmp-MX-mOB" secondAttribute="bottom" id="FBA-Oo-cXS"/>
                             <constraint firstItem="gmp-MX-mOB" firstAttribute="leading" secondItem="PRt-qF-iYf" secondAttribute="leading" id="Gwd-aO-hew"/>
                             <constraint firstAttribute="trailing" secondItem="gmp-MX-mOB" secondAttribute="trailing" id="MU1-EZ-aoz"/>
-                            <constraint firstItem="gmp-MX-mOB" firstAttribute="top" secondItem="nyr-Rk-ZzT" secondAttribute="bottom" id="Y85-TV-Y7r"/>
+                            <constraint firstItem="aou-aG-xJK" firstAttribute="top" secondItem="nyr-Rk-ZzT" secondAttribute="bottom" id="T4w-yc-se3"/>
+                            <constraint firstItem="aou-aG-xJK" firstAttribute="leading" secondItem="PRt-qF-iYf" secondAttribute="leading" id="cgX-SS-QTz"/>
+                            <constraint firstAttribute="trailing" secondItem="aou-aG-xJK" secondAttribute="trailing" id="psK-ch-Pyf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PQn-s8-JmX"/>
+                    <navigationItem key="navigationItem" id="PQn-s8-JmX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MOn-jt-BkV">
+                            <connections>
+                                <action selector="addTaskTapped:" destination="xMG-eR-tiW" id="hab-IQ-3qq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addTaskButton" destination="MOn-jt-BkV" id="fWv-U2-GJ2"/>
                         <outlet property="tableView" destination="gmp-MX-mOB" id="bM9-XH-GDI"/>
                     </connections>
                 </viewController>

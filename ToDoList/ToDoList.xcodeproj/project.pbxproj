@@ -19,6 +19,10 @@
 		35243F121EC3542A00174514 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35243F111EC3542A00174514 /* MainTableViewCell.swift */; };
 		35243F141EC3543400174514 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35243F131EC3543400174514 /* MainTableViewCell.xib */; };
 		35243F161EC3570400174514 /* MainTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35243F151EC3570400174514 /* MainTableViewCellModel.swift */; };
+		35288D601EC4A34B007FE399 /* SingleTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35288D5F1EC4A34B007FE399 /* SingleTask.storyboard */; };
+		35288D621EC4A396007FE399 /* SingleTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35288D611EC4A396007FE399 /* SingleTaskViewController.swift */; };
+		35288D641EC4A3E3007FE399 /* SingleTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35288D631EC4A3E3007FE399 /* SingleTaskCoordinator.swift */; };
+		357597F61EC5B1F700366FBC /* SubTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357597F51EC5B1F700366FBC /* SubTask.swift */; };
 		35B94C561EC1E33F00394049 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 35B94C551EC1E33F00394049 /* .swiftlint.yml */; };
 		35B94C581EC1E39600394049 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 35B94C571EC1E39600394049 /* Podfile */; };
 		35B94C5C1EC1F30500394049 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B94C5B1EC1F30500394049 /* Storyboards.swift */; };
@@ -41,6 +45,10 @@
 		35243F111EC3542A00174514 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		35243F131EC3543400174514 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		35243F151EC3570400174514 /* MainTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCellModel.swift; sourceTree = "<group>"; };
+		35288D5F1EC4A34B007FE399 /* SingleTask.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SingleTask.storyboard; sourceTree = "<group>"; };
+		35288D611EC4A396007FE399 /* SingleTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTaskViewController.swift; sourceTree = "<group>"; };
+		35288D631EC4A3E3007FE399 /* SingleTaskCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTaskCoordinator.swift; sourceTree = "<group>"; };
+		357597F51EC5B1F700366FBC /* SubTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubTask.swift; sourceTree = "<group>"; };
 		35B94C551EC1E33F00394049 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		35B94C571EC1E39600394049 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		35B94C5B1EC1F30500394049 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
@@ -66,31 +74,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		35243EF51EC30DF500174514 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				35DE14FC1EC0B08B006B76AF /* MainViewController.swift */,
-			);
-			name = Main;
-			sourceTree = "<group>";
-		};
 		35243EFD1EC328EC00174514 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				35243EFE1EC3290800174514 /* Main */,
+				35288D631EC4A3E3007FE399 /* SingleTaskCoordinator.swift */,
 				35243EF31EC3038000174514 /* AppCoordinator.swift */,
 				35243EF11EC3037400174514 /* Coordinator.swift */,
+				35243EFF1EC3291400174514 /* MainCoordinator.swift */,
 			);
 			name = Coordinators;
 			path = ..;
-			sourceTree = "<group>";
-		};
-		35243EFE1EC3290800174514 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				35243EFF1EC3291400174514 /* MainCoordinator.swift */,
-			);
-			name = Main;
 			sourceTree = "<group>";
 		};
 		35243F031EC333B400174514 /* Protocols */ = {
@@ -106,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				35243F0B1EC3424E00174514 /* Task.swift */,
+				357597F51EC5B1F700366FBC /* SubTask.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -131,7 +125,8 @@
 		35AE08391EC1B9BA0033B8AF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				35243EF51EC30DF500174514 /* Main */,
+				35288D611EC4A396007FE399 /* SingleTaskViewController.swift */,
+				35DE14FC1EC0B08B006B76AF /* MainViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -139,8 +134,9 @@
 		35AE083A1EC1B9E40033B8AF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				35DE14FE1EC0B08B006B76AF /* Main.storyboard */,
+				35288D5F1EC4A34B007FE399 /* SingleTask.storyboard */,
 				35243F011EC32DD400174514 /* LaunchScreen.storyboard */,
+				35DE14FE1EC0B08B006B76AF /* Main.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -281,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35288D601EC4A34B007FE399 /* SingleTask.storyboard in Resources */,
 				35243F141EC3543400174514 /* MainTableViewCell.xib in Resources */,
 				35B94C581EC1E39600394049 /* Podfile in Resources */,
 				35B94C561EC1E33F00394049 /* .swiftlint.yml in Resources */,
@@ -376,15 +373,18 @@
 				35243F161EC3570400174514 /* MainTableViewCellModel.swift in Sources */,
 				35243F121EC3542A00174514 /* MainTableViewCell.swift in Sources */,
 				35243F071EC333EB00174514 /* NibNamed.swift in Sources */,
+				357597F61EC5B1F700366FBC /* SubTask.swift in Sources */,
 				35243EF21EC3037400174514 /* Coordinator.swift in Sources */,
 				35243F0C1EC3424E00174514 /* Task.swift in Sources */,
 				35243F001EC3291400174514 /* MainCoordinator.swift in Sources */,
 				35243F091EC33A8200174514 /* NibLoadable.swift in Sources */,
+				35288D641EC4A3E3007FE399 /* SingleTaskCoordinator.swift in Sources */,
 				35B94C5C1EC1F30500394049 /* Storyboards.swift in Sources */,
 				35243EF41EC3038000174514 /* AppCoordinator.swift in Sources */,
 				35DE14FD1EC0B08B006B76AF /* MainViewController.swift in Sources */,
 				35DE14FB1EC0B08B006B76AF /* AppDelegate.swift in Sources */,
 				35243EFC1EC31A0E00174514 /* PortaitNavigationController.swift in Sources */,
+				35288D621EC4A396007FE399 /* SingleTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

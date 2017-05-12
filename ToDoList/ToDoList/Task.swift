@@ -12,4 +12,12 @@ class Task: Object {
 
     dynamic var title = ""
     dynamic var info = ""
+    dynamic var createdAt = NSDate()
+    let subtasks = List<SubTask>()
+
+    convenience init(title: String, info: String) {
+        self.init()
+        self.title = title
+        self.info = info
+    }
 }

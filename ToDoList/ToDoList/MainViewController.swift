@@ -8,21 +8,32 @@
 
 import UIKit
 
-protocol MainDataSource: class {
+protocol MainVCDataSource: class {
     func numberOfSections() -> Int
     func numberOfItemsIn(_ section: Int) -> Int
     func item(atIndex: Int) -> Task?
 }
 
+protocol MainVCDelegate: class {
+    func addTaskTapped()
+}
+
 class MainViewController: UIViewController {
 
     @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var addTaskButton: UIBarButtonItem!
 
-    weak var dataSource: MainDataSource?
+    weak var dataSource: MainVCDataSource?
+    weak var delegate: MainVCDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
 
     private func setupTableView() {
@@ -32,11 +43,16 @@ class MainViewController: UIViewController {
         tableView.backgroundColor = UIColor.clear
         tableView.register(MainTableViewCell.nib, forCellReuseIdentifier: MainTableViewCell.nibName)
     }
+
+    @IBAction private func addTaskTapped(_ sender: Any) {
+        delegate?.addTaskTapped()
+    }
 }
 
 extension MainViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         print("Row \(indexPath.row) selected.")
     }
 }

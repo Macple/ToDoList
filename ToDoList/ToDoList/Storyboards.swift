@@ -64,6 +64,25 @@ struct StoryboardScene {
       return vc
     }
   }
+  enum SingleTask: String, StoryboardSceneType {
+    static let storyboardName = "SingleTask"
+
+    static func initialViewController() -> UINavigationController {
+      guard let vc = storyboard().instantiateInitialViewController() as? UINavigationController else {
+        fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
+      }
+      return vc
+    }
+
+    case singleTaskViewControllerScene = "SingleTaskViewController"
+    static func instantiateSingleTaskViewController() -> ToDoList.SingleTaskViewController {
+      guard let vc = StoryboardScene.SingleTask.singleTaskViewControllerScene.viewController() as? ToDoList.SingleTaskViewController
+      else {
+        fatalError("ViewController 'SingleTaskViewController' is not of the expected class ToDoList.SingleTaskViewController.")
+      }
+      return vc
+    }
+  }
 }
 
 struct StoryboardSegue {
