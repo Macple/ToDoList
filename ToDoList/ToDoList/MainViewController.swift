@@ -16,6 +16,7 @@ protocol MainVCDataSource: class {
 
 protocol MainVCDelegate: class {
     func addTaskTapped()
+    func editTaskTapped(atIndex: Int)
 }
 
 class MainViewController: UIViewController {
@@ -53,6 +54,7 @@ extension MainViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        delegate?.editTaskTapped(atIndex: indexPath.row)
         print("Row \(indexPath.row) selected.")
     }
 }

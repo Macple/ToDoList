@@ -49,4 +49,9 @@ extension MainCoordinator: MainVCDelegate {
     func addTaskTapped() {
         self.startChild(coordinator: SingleTaskCoordinator(with: sourceNavigationController))
     }
+
+    func editTaskTapped(atIndex: Int) {
+        let editedTask = realm.objects(Task.self)[atIndex]
+        self.startChild(coordinator: SingleTaskCoordinator(with: sourceNavigationController, task: editedTask))
+    }
 }

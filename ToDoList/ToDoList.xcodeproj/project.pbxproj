@@ -22,6 +22,7 @@
 		35288D621EC4A396007FE399 /* SingleTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35288D611EC4A396007FE399 /* SingleTaskViewController.swift */; };
 		35288D641EC4A3E3007FE399 /* SingleTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35288D631EC4A3E3007FE399 /* SingleTaskCoordinator.swift */; };
 		357444951EC5F39D00D3A6AA /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357444941EC5F39D00D3A6AA /* MainCoordinator.swift */; };
+		357444981EC5F53200D3A6AA /* SingleTaskMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357444971EC5F53200D3A6AA /* SingleTaskMode.swift */; };
 		357597F61EC5B1F700366FBC /* SubTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357597F51EC5B1F700366FBC /* SubTask.swift */; };
 		35B94C561EC1E33F00394049 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 35B94C551EC1E33F00394049 /* .swiftlint.yml */; };
 		35B94C581EC1E39600394049 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 35B94C571EC1E39600394049 /* Podfile */; };
@@ -48,6 +49,7 @@
 		35288D611EC4A396007FE399 /* SingleTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTaskViewController.swift; sourceTree = "<group>"; };
 		35288D631EC4A3E3007FE399 /* SingleTaskCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTaskCoordinator.swift; sourceTree = "<group>"; };
 		357444941EC5F39D00D3A6AA /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCoordinator.swift; path = ToDoList/MainCoordinator.swift; sourceTree = "<group>"; };
+		357444971EC5F53200D3A6AA /* SingleTaskMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleTaskMode.swift; sourceTree = "<group>"; };
 		357597F51EC5B1F700366FBC /* SubTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubTask.swift; sourceTree = "<group>"; };
 		35B94C551EC1E33F00394049 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		35B94C571EC1E39600394049 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -122,6 +124,14 @@
 			name = MainTableViewCell;
 			sourceTree = "<group>";
 		};
+		357444961EC5F51A00D3A6AA /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				357444971EC5F53200D3A6AA /* SingleTaskMode.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
 		35AE08391EC1B9BA0033B8AF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				35B94C551EC1E33F00394049 /* .swiftlint.yml */,
-				35DE15061EC0B08B006B76AF /* Info.plist */,
 				35B94C571EC1E39600394049 /* Podfile */,
 				35243EFB1EC31A0E00174514 /* PortaitNavigationController.swift */,
 			);
@@ -182,10 +191,12 @@
 		35DE14F91EC0B08B006B76AF /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				35DE15061EC0B08B006B76AF /* Info.plist */,
 				35DE14FA1EC0B08B006B76AF /* AppDelegate.swift */,
 				35B94C5A1EC1ED9500394049 /* Constants */,
 				35243F0F1EC353A900174514 /* Controls */,
 				35243EFD1EC328EC00174514 /* Coordinators */,
+				357444961EC5F51A00D3A6AA /* Enums */,
 				35243F0A1EC341F400174514 /* Models */,
 				35243F031EC333B400174514 /* Protocols */,
 				35AE083A1EC1B9E40033B8AF /* Storyboards */,
@@ -379,6 +390,7 @@
 				35243F091EC33A8200174514 /* NibLoadable.swift in Sources */,
 				35288D641EC4A3E3007FE399 /* SingleTaskCoordinator.swift in Sources */,
 				35B94C5C1EC1F30500394049 /* Storyboards.swift in Sources */,
+				357444981EC5F53200D3A6AA /* SingleTaskMode.swift in Sources */,
 				35243EF41EC3038000174514 /* AppCoordinator.swift in Sources */,
 				35DE14FD1EC0B08B006B76AF /* MainViewController.swift in Sources */,
 				35DE14FB1EC0B08B006B76AF /* AppDelegate.swift in Sources */,

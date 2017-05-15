@@ -10,6 +10,7 @@ import RealmSwift
 
 class Task: Object {
 
+    dynamic var taskID = UUID().uuidString
     dynamic var title = ""
     dynamic var info = ""
     dynamic var createdAt = NSDate()
@@ -19,5 +20,9 @@ class Task: Object {
         self.init()
         self.title = title
         self.info = info
+    }
+
+    override static func primaryKey() -> String? {
+        return "taskID"
     }
 }

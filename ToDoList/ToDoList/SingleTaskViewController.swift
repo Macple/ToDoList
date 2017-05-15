@@ -12,6 +12,10 @@ protocol SingleTaskVCDelegate: class {
     func saveButtonTapped(title: String, description: String)
 }
 
+protocol SingleTaskVCDataSource: class {
+    func editedTask() -> Task?
+}
+
 class SingleTaskViewController: UIViewController {
 
     @IBOutlet fileprivate weak var titleLabel: UILabel!
@@ -20,9 +24,18 @@ class SingleTaskViewController: UIViewController {
     @IBOutlet fileprivate weak var descriptionTextView: UITextView!
 
     weak var delegate: SingleTaskVCDelegate?
+    weak var dataSource: SingleTaskVCDataSource?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let task = dataSource?.editedTask() {
+            setupView(with: task)
+        }
+    }
+
+    private func setupView(with editedTask: Task) {
+        titleTextField.text = editedTask.title
+        descriptionTextView.text = editedTask.info
     }
 
     @IBAction func saveButtonTapped(_ sender: Any) {
