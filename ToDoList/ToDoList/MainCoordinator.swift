@@ -54,4 +54,11 @@ extension MainCoordinator: MainVCDelegate {
         let editedTask = realm.objects(Task.self)[atIndex]
         self.startChild(coordinator: SingleTaskCoordinator(with: sourceNavigationController, task: editedTask))
     }
+
+    func deleteTaskTapped(atIndex: Int, onDelete: (() -> Void)?) {
+        try? realm.write {
+            realm.delete(realm.objects(Task.self)[atIndex])
+        }
+        onDelete?()
+    }
 }

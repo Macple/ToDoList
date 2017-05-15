@@ -17,6 +17,7 @@ protocol MainVCDataSource: class {
 protocol MainVCDelegate: class {
     func addTaskTapped()
     func editTaskTapped(atIndex: Int)
+    func deleteTaskTapped(atIndex: Int, onDelete: (() -> Void)?)
 }
 
 class MainViewController: UIViewController {
@@ -56,6 +57,16 @@ extension MainViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
         delegate?.editTaskTapped(atIndex: indexPath.row)
         print("Row \(indexPath.row) selected.")
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            delegate?.deleteTaskTapped(atIndex: indexPath.row) { self.tableView.reloadData() }
+        }
     }
 }
 
